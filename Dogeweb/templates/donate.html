@@ -1,0 +1,19 @@
+<html>
+    <div class="button.mbtn"></div>
+    <style>
+        button.mbtn {
+    padding:0.6em 2em;
+    border-radius: 20px;
+    color:rgb(0, 0, 0);
+    background-color:#ffffff;
+    font-size:1.1em;
+    border:0;
+    cursor:pointer;
+    margin:1em;
+    border:3px solid rgb(0, 0, 0)
+    }
+    </style>                                   
+<center style="font-family: Arial, Helvetica, sans-serif; font-size: 50px;"><header>Donate to help us maintain our website!</header></center>
+<button  onclick="location.href = '{{ url_for('donate5') }}';"  class="mbtn" style="transform: translateY(300px) translateX(40px);">Donate $5</button>
+<button  onclick="location.href = '{{ url_for('donate10') }}';"  class="mbtn" style="transform: translateY(300px) translateX(70px);">Donate $10</button>
+</html>

@@ -1,0 +1,44 @@
+<html>
+        <center><img src="{{ display_logo }}" width="500" height="200" style="transform: translateY(90px);"/></center>
+    <style>
+        
+        #r1 { 
+            border-radius: 25px;
+            border: 2px solid rgb(0, 0, 0);
+            padding: 20px; 
+            width: 700px;
+            height: 15px;
+            background-color: white;
+            z-index:2;
+        }
+
+        .bbar {
+            height: 50px;
+            width: 10000px;
+            background-color:rgb(128, 128, 128, 0.25);
+            position: fixed;
+            top: 786px;
+        }
+
+    </style>
+<div class="bbar"></div>
+<input type="text" id="r1" style="transform: translateY(120px) translateX(350px);" placeholder="Search Something..."></input>
+<button onclick="senduserinput()">Search</button>
+<script>
+    function senduserinput(){
+        let userinfo=document.getElementById('r1').value
+        let result = userinfo.replace("http://", "")
+        let result2 = result.replace("https://", "") 
+        console.log(result2)
+        const request = new XMLHttpRequest()
+        request.open('POST', `/ProcessUserinfo/${JSON.stringify(result2)}`)
+        request.send();
+    }
+</script>
+</form>
+<a href="{{ url_for('terms') }}" style="position: fixed; right: 165px; top: 793px; color: black;">Terms</a>
+<a href="{{ url_for('donate') }}" style="position: fixed; right: 100px; top: 793px; color: black;">Donate</a>
+
+
+
+</html>
